@@ -1,0 +1,4 @@
+*.html linguist-documentation=true
+*.bat linguist-documentation=true
+*.md linguist-detectable=true
+*.md linguist-documentation=false

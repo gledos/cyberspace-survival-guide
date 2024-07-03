@@ -1,0 +1,14 @@
+jieba
+mkdocs-abs-rel-plugin
+mkdocs-blogging-plugin
+mkdocs-callouts
+mkdocs-exclude
+mkdocs-exclude-search
+mkdocs-material
+mkdocs-material-extensions
+mkdocs-minify-plugin
+mkdocs-redirects
+mkdocs-roamlinks-plugin
+mkdocs-rss-plugin
+mkdocs-video
+pymdown-extensions

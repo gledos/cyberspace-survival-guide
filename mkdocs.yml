@@ -1,0 +1,241 @@
+# official tutorial
+# mkdocs-material: https://squidfunk.github.io/mkdocs-material/
+# mkdocs: https://www.mkdocs.org/user-guide/configuration/
+# bug 已修复 ../
+
+# 测试内容 ……
+
+site_name: 赛博空间生存指南
+site_url: https://csg.gledos.science/
+site_description: >-
+  现代数字探索者的技能树指南
+
+repo_name: gledos/cyberspace-survival-guide
+repo_url: https://github.com/gledos/cyberspace-survival-guide
+
+use_directory_urls: false   # gledos 不喜欢的 URL 风格，所以要关闭
+edit_uri: ""                # 隐藏编辑按钮
+
+theme:
+  favicon: favicon.png
+  icon:
+    logo: material/microsoft-xbox-controller-off
+    admonition:
+      quote: custom/cblb
+  font: false
+  palette:
+  - media: "(prefers-color-scheme: light)"
+    primary: blue
+    scheme: default
+    toggle:
+      icon: material/toggle-switch-off-outline
+      name: 切换到暗模式
+  - media: "(prefers-color-scheme: dark)"
+    primary: blue
+    scheme: slate
+    toggle:
+      icon: material/toggle-switch
+      name: 切换到亮模式
+  name: material
+  custom_dir: overrides
+  language: zh            # 中文，解决中文搜索问题
+  features:
+  # - navigation.prune      # 导航修剪
+  - content.tabs.link     # 同步内容选项卡（点击 A 选项卡后，其他的 A 选项卡也会自动被选择） https://squidfunk.github.io/mkdocs-material/reference/content-tabs/#open-me-in-a-new-tab-
+  - navigation.indexes    # 文件夹下的 index.md 自动「连接」
+  - header.autohide
+  - navigation.top        # 回到顶部的按钮
+  # - search.highlight
+  # - navigation.instant  # XHR 支持
+  # - navigation.tracking # 自动锚点更新
+  # - toc.integrate
+  # - tabs                # 顶部选项卡/栏位
+
+markdown_extensions:
+# - legacy_em               # 恢复 Markdown 的严格加重符号语义
+- md_in_html                # HTML 内书写 Markdown
+- attr_list                 # 增加 css-html 样式，例如按钮，比如图片定义大小，caption    https://python-markdown.github.io/extensions/attr_list/
+# - legacy_attrs            # 增加 css-html 样式，已废弃，不推荐使用    https://python-markdown.github.io/extensions/legacy_attrs/
+- admonition                # 突出显示一些东西，比如 !!!info|bug|tips之类
+- footnotes                 # 支持脚注[^1]
+- def_list                  # 支持有序、无序、任务列表
+- pymdownx.superfences:     # 代码块相关
+    custom_fences:          # 代码块相关
+    - name: mermaid
+      class: mermaid
+      format: !!python/name:pymdownx.superfences.fence_code_format
+- toc:
+    permalink: "#"          # heading anchor
+    slugify: !!python/name:pymdownx.slugs.uslugify     # 解决中文标题解析问题
+- codehilite:
+    guess_lang: false
+    linenums: false
+# - pymdownx.betterem:
+#     smart_enable: all
+- pymdownx.tabbed:        # 标签页 https://squidfunk.github.io/mkdocs-material/reference/content-tabs/ # C++/python 代码例子切换
+    alternate_style: true
+    # slugify: !!python/object/apply:pymdownx.slugs.slugify
+    #   kwds:
+    #     case: lower
+- meta                    # YAML 元数据
+- pymdownx.tasklist
+- pymdownx.details
+- pymdownx.highlight      # 代码块相关
+- pymdownx.inlinehilite   # 代码块相关
+- pymdownx.snippets
+# - pymdownx.magiclink    # 魔法链接，自动把裸露的链接转化成 <a> 标签
+- pymdownx.mark
+- pymdownx.critic         # 支持 markdown 高亮==、删除、注解等高级样式
+- pymdownx.keys           # 支持 快捷键渲染
+- pymdownx.emoji:         # 支持图标 icons 和表情渲染，比如:smile:
+    emoji_index: !!python/name:material.extensions.emoji.twemoji
+    emoji_generator: !!python/name:material.extensions.emoji.to_svg
+    options:
+      custom_icons:
+        - overrides/.icons
+# pymdownx.b64            # 将图片编码为 base64
+# - abbr                  # 缩写词，因为没有多少 Markdown 使用这样的语法，所以不会使用。
+# - nl2br                 # newline-to-break markdown 非严格换行，我不喜欢的插件
+# - pymdownx.arithmatex   # 数学公式latex支持
+# - pymdownx.pathconverter:
+#     base_path: ''       # default: ''
+#     relative_path: ''   # default ''
+#     absolute: false     # default: false
+#     tags: 'a script img link object embed'
+# - pymdownx.caret        # 上标、下划线
+# - pymdownx.smartsymbols # 1st 2en 以及特殊符号
+# - pymdownx.tilde        # 下标
+
+plugins:
+- glightbox:               # 添加灯箱功能    https://squidfunk.github.io/mkdocs-material/reference/images/#lightbox
+    auto_caption: true
+    background: none
+- rss:
+    locale: zh-hans
+    abstract_delimiter: "-1"
+    date_from_meta:
+      as_creation: dateCreated
+      as_update: date
+      datetime_format: "%Y-%m-%dT%H:%M:%S"
+    categories:
+    - tags
+    match_path: ".*"
+    url_parameters:
+      utm_source: "documentation"
+      utm_medium: "RSS"
+      utm_campaign: "feed-syndication"
+# - offline                 # 离线使用    https://squidfunk.github.io/mkdocs-material/setup/building-for-offline-usage/
+# - typeset                 # 排版插件    https://squidfunk.github.io/mkdocs-material/reference/#configuration
+# - progress                # 显示构建状态，方便除错？    https://github.com/obuya/mkdocs-new-features-notifier
+- mkdocs-video:           # 支持内嵌本地视频    https://pypi.org/project/mkdocs-video/
+    is_video: True
+    css_style:
+      width: "100%"
+      height: "100%"
+# - minify:                 # 将文件 minify 的插件   https://github.com/byrnereese/mkdocs-minify-plugin
+#     minify_html: true     # html 过多，导致生成时间变成了三倍……
+#     minify_js: true       # 只压缩 js 和 css 效果又不明显，所以不打算使用……
+#     minify_css: true
+#     htmlmin_opts:
+#       remove_comments: true
+  #   js_files:
+  #   - my/javascript/dir/file1.js
+  #   css_files:
+  #   - css/external_link_icon.css
+  #   - css/footnotes.css
+  #   - css/base.css
+  #   - css/custom_admonitions.css
+- search:
+    separator: '[\s\u200b\-]'
+# - exclude-search:
+    # exclude:
+    # - CODE_OF_CONDUCT.md
+    # - tags.md
+    # - warrant_canary.md
+    # - 待办事项.md
+    # - rule/*
+    # - news_archive/*
+    # - encryption/*
+- tags:
+    tags_file: tags.md
+- callouts:               # 微软风格的 admonition     https://github.com/sondregronas/mkdocs-callouts
+    breakless_lists: false
+- abs-to-rel              # 绝对路径转相对路径        https://pypi.org/project/mkdocs-abs-rel-plugin/
+# - pdf-export            # 导出为 PDF 格式，不过对于此 Wiki 来说，耗时过多。
+# - roamlinks             # 这是自动将链接转化为易于 mkdocs 的插件
+# - autolinks
+- exclude:
+    glob:
+    - "src/_HD_/*"
+    - "mkdocs/本地/*"
+    - "*.tmp"
+    - "*.gz"
+    - "encryption/*"
+    - "liquid/*"
+    - ".trash/*"
+    - "templates/*"
+    # regex:
+    # - '.*\.(tmp|bin|tar)$'
+- blogging:
+    features:
+      tags:
+        index_page: tags.md
+        insert: bottom
+    time_format: '%Y-%m-%d %H:%M:%S'
+    meta_time_format: '%Y-%m-%dT%H:%M:%S'
+    dirs: # The directories to be included
+    - blog
+    categories:
+    - name: activities
+      dirs:
+      - activities
+      size: 50
+      template: overrides/custom-blog.html
+
+- redirects:              # 重定向插件                https://github.com/datarobot/mkdocs-redirects
+    redirect_maps:
+      # "punish/APP侵害用户权益专项整治行动/APP侵害用户权益专项整治行动.md": "punish/APP侵害用户权益专项整治行动/index.md"  # 已经拆分到 gld 分站上，所以不再需要这个了。
+
+extra:
+  generator: false
+  social:
+  - icon: fontawesome/brands/telegram
+    link: https://t.me/gledos_microblogging
+  - icon: material/email-outline
+    link: mailto:cngledos@gmail.com
+  analytics:
+    provider: google
+    property: G-6NFWGJL748
+  consent:
+    cookies:
+      github:
+        name: GitHub
+        checked: true
+      analytics:
+        name: Google Analytics
+        checked: true
+      custom:
+        name: Google AdSense
+        checked: true
+    title: Cookie 设置
+    description: >-
+      「赛博空间生存指南」使用 Cookie 实现 Google 广告、分析和 GitHub 连接功能，请根据情况选择允许或拒绝这些 Cookie。<br>
+      完成设置后，也可以在网站底部的「更改 Cookie 设置」重新调整。
+    actions:
+      - accept
+      - reject
+      - manage
+
+extra_css:
+- "css/base.css"               # 格式处理
+- "css/custom_admonitions.css" # 自定义 Admonitions
+- "css/external_link_icon.css" # 外链
+- "css/footnotes.css"          # 脚注 CSS
+
+extra_javascript:
+- js/consent.js
+# - https://unpkg.com/mermaid/dist/mermaid.min.js
+
+copyright: >
+  使用了 <a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocs</a> 以及 Github Pages 生成并托管网站。<br>
+  <a href="#__consent">更改 Cookie 设置</a>
