@@ -19,7 +19,7 @@ edit_uri: ""                # 隐藏编辑按钮
 theme:
   favicon: favicon.png
   icon:
-    logo: material/microsoft-xbox-controller-off
+    logo: material/space-invaders
     admonition:
       quote: custom/cblb
   font: false
