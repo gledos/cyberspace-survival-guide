@@ -60,7 +60,7 @@ dateCreated: "2024-07-03T16:27:00"
 >
 > 难点：避开搜索引擎的竞价广告。
 >
-> 所需技能：「[键盘](../skills/keyboard.md)」「鼠标」「[浏览器（初级）][browser_primary]」「搜索引擎中级」
+> 所需技能：「[键盘](../skills/keyboard.md)」「鼠标」「[浏览器（初级）][browser_primary]」「搜索（初级）」
 >
 > <!-- 之所以有键盘，是因为链接 -->
 

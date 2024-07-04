@@ -209,9 +209,11 @@ extra_css:
 - "css/custom_admonitions.css" # 自定义 Admonitions
 - "css/external_link_icon.css" # 外链
 - "css/footnotes.css"          # 脚注 CSS
+- "css/skills.css"                 # 技能
 
 extra_javascript:
-- js/consent.js
+- js/quiz.js
+- js/skills.js
 # - https://unpkg.com/mermaid/dist/mermaid.min.js
 
 copyright: >
