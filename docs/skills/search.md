@@ -46,7 +46,6 @@ dateCreated: "2024-07-04T09:17:00"
 >
 > <div class="button-container">
 >     <button class="md-button" onclick="changeQuiz('search_primary')">搜索（初级）测验</button>
->     <button class="md-button" onclick="changeQuiz('search_intermediate')">搜索（中级）测验</button>
 >     <button class="md-button" onclick="changeQuiz('search_advanced')">搜索（高级）测验</button>
 > </div>
 >
@@ -59,6 +58,8 @@ dateCreated: "2024-07-04T09:17:00"
 >     </div>
 > </div>
 
+<!-- <button class="md-button" onclick="changeQuiz('search_intermediate')">搜索（中级）测验</button> -->
+
 <script>
     // 题目数据，假设从 JSON 文件或其他数据源加载
     const quizData = {
@@ -66,7 +67,7 @@ dateCreated: "2024-07-04T09:17:00"
             "title": "搜索技能测验",
             "questions": [
                 {
-                    "question": "如何识别正确的 Steam 官网？",
+                    "question": "（1/3）以下搜索结果里，Steam 官网是？",
                     "answers": [
                         "<div class='result-item'><span style='color:var(--md-typeset-a-color);'>欢迎来到stbig-正版游戏-客户端下载</span><p>stbig客户端下载，专业游戏平台，为玩家免费领取海量奖品...</p><div class='company-info'>杭州市生物科技有限公司 - 广告</div>", // 0
                         "<div class='result-item'><span style='color:var(--md-typeset-a-color);'>Steam正版下载-安全流畅</span><p>steam正版账号购买，玩家可以在商城购买国区、美区等多地区正版账号...</p><div class='company-info'>武汉兴洪山区网络科技有限公司 - 广告</div></div>", // 1
@@ -75,22 +76,21 @@ dateCreated: "2024-07-04T09:17:00"
                     "correct_answer": 2
                 },
                 {
-                    "question": "如何使用百度搜索某个游戏？",
+                    "question": "（2/3）如果要查询某个软件的官网，应该避开什么样的结果？",
                     "answers": [
-                        "打开浏览器，输入游戏名称，点击搜索",
-                        "在搜索结果中点击第一个链接",
-                        "随便选择一个结果"
+                        "官方网站",
+                        "官方中文绿色免安装版",
+                        "官网"
                     ],
-                    "correct_answer": 0
+                    "correct_answer": 1
                 },
                 {
-                    "question": "如何避免内容农场？",
+                    "question": "（3/3）如果要搜索香蕉的百科，下列搜索选项，谁的结果可能更好？",
                     "answers": [
-                        "识别广告和低质量内容",
-                        "只相信排名靠前的结果",
-                        "不使用搜索引擎"
+                        "香蕉的百科是什么？",
+                        "香蕉 百科"
                     ],
-                    "correct_answer": 0
+                    "correct_answer": 1
                 }
             ]
         },
@@ -102,7 +102,7 @@ dateCreated: "2024-07-04T09:17:00"
                     "answers": [
                         "答案选项 1",
                         "答案选项 2",
-                        "答案选项 3"
+                        "答案选项 3（正确答案）"
                     ],
                     "correct_answer": 2
                 }
@@ -111,7 +111,15 @@ dateCreated: "2024-07-04T09:17:00"
         "search_advanced": {
             "title": "高级搜索技能测验",
             "questions": [
-                // 高级搜索技能的题目数据
+                {
+                    "question": "占位题目 1",
+                    "answers": [
+                        "答案选项 1",
+                        "答案选项 2",
+                        "答案选项 3（正确答案）"
+                    ],
+                    "correct_answer": 2
+                }
             ]
         }
     };

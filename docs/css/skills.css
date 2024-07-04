@@ -1,6 +1,11 @@
 p[class$="advanced"] {
-    color: #E8B647;
+    color: black;
+    background-color: #E8B647
     /* https://nipponcolors.com/#tamamorokoshi */
+}
+
+p[class$="advanced"] > a {
+    color: black;
 }
 
 p[class$="intermediate"] {
@@ -14,6 +19,11 @@ p[class$="intermediate"] > a {
 }
 
 p[class$="primary"] {
-    color: #5C3719;
+    color: white;
+    background-color: #5C3719
     /* https://colorsea.js.org/pages/Names.html#chinese-traditional-colors */
+}
+
+p[class$="primary"] > a {
+    color: white;
 }
