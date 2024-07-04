@@ -38,17 +38,16 @@ dateCreated: "2024-07-03T16:27:00"
 >
 >     subgraph SOS["软件技能"]
 >         下载器
->         设置配置
->         browser[浏览器（初级）]
->         搜索引擎
+>         browser[浏览器（初级）] --> search[搜索（初级）]
 >         帐号
 >         电子商务
 >     end
 >
 >     click browser "../skills/browser.html"
+>     click search "../skills/search.html"
 >
 >     subgraph OS["其它技能"]
->         设置管理
+>         设置
 >     end
 > ```
 
@@ -60,19 +59,20 @@ dateCreated: "2024-07-03T16:27:00"
 >
 > 难点：避开搜索引擎的竞价广告。
 >
-> 所需技能：「[键盘](../skills/keyboard.md)」「鼠标」「[浏览器（初级）][browser_primary]」「搜索（初级）」
+> 所需技能：「[键盘](../skills/keyboard.md)」「鼠标」「[浏览器（初级）][browser]」「[搜索（初级）][search]」
 >
 > <!-- 之所以有键盘，是因为链接 -->
 
-[browser_primary]: ../skills/browser.html
+[browser]: ../skills/browser.md
+[search]: ../skills/search.md
 
 > [!note]- 1. 使用浏览器进入 Steam 的官网。
 >
 > 从搜索引擎给出的链接直接进入，或者在地址栏输入 [https://store.steampowered.com/][steam] 并按下 Enter。
 >
-> 如果无法正常开启 Steam 官网，那么需要使用 Proxy/VPN，或者 SNI 伪装工具，绕过 GFW 审查。
+> 如果无法正常开启 Steam 官网，那么需要使用加速器、Proxy/VPN，或者 SNI 伪装工具，以绕过 GFW 审查。
 >
-> 所需技能：「[浏览器（初级）][browser_primary]」「Proxy」「SNI 伪装」
+> 所需技能：「[浏览器（初级）][browser]」「Proxy」「SNI 伪装」
 
 [steam]: https://store.steampowered.com/
 
@@ -89,7 +89,7 @@ dateCreated: "2024-07-03T16:27:00"
 >
 > 打开下载到的安装包，完成 Steam 客户端的安装。
 >
-> 所需技能：「程序安装」
+> 所需技能：「安装」
 >
 > <!-- 打开下载的安装文件，按照提示进行安装。 -->
 > <!-- 选择安装路径并完成安装。 -->

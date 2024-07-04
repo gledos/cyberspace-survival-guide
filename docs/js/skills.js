@@ -17,14 +17,17 @@ document.addEventListener("DOMContentLoaded", function () {
             { key: "browser_primary", label: "浏览器（初级）" },
         ],
         file: [
-            { key: "file_advanced", label: "文件管理（高级）" },
-            { key: "file_intermediate", label: "文件管理（中级）" },
-            { key: "file_primary", label: "文件管理（初级）" },
+            { key: "file_advanced", label: "文件（高级）" },
+            { key: "file_intermediate", label: "文件（中级）" },
+            { key: "file_primary", label: "文件（初级）" },
         ],
         keyboard: [
             { key: "keyboard_advanced", label: "键盘（高级）" },
             { key: "keyboard_intermediate", label: "键盘（中级）" },
             { key: "keyboard_primary", label: "键盘（初级）" },
+        ],
+        install: [
+            { key: "install_advanced", label: "安装" },
         ],
     };
 

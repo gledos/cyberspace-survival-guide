@@ -1,6 +1,9 @@
 // 主要由 GPT-4o 编写，gledos 提供设计
 
-let currentQuiz = "search_primary"; // 初始值为中级搜索测验
+
+const quizContainer = document.querySelector('.question-container');
+let currentQuiz = quizContainer.getAttribute('data-quiz');
+// let currentQuiz = "search_primary"; // 初始值为中级搜索测验
 let currentQuestionIndex = 0; // 当前题目索引
 let currentCorrectAnswer = null; // 当前题目正确答案
 let currentSelectedAnswer = undefined; // 当前选中的答案索引

@@ -20,4 +20,4 @@ icon: material/home
 
 ## 指南清单
 
-目前仅有 [Steam](events/steam.md) 安装及其使用的指南。
+目前仅有 [Steam](events/steam.md) 安装及其使用的指南，并且正在施工中，尚未达到令人满意的程度。

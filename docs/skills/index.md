@@ -18,10 +18,13 @@ dateCreated: "2024-07-04T09:17:00"
 :material-web: [浏览器](./browser.md)
 { .card .skill_browser }
 
-:material-file: [文件管理](./file.md)
+:material-file: [文件](./file.md)
 { .card .skill_file }
 
 :material-keyboard: [键盘](./keyboard.md)
 { .card .skill_keyboard }
+
+:material-package-variant-plus: [安装](./install.md)
+{ .card .skill_install }
 
 </div>
