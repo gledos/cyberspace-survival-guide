@@ -33,8 +33,10 @@ dateCreated: "2024-07-03T16:27:00"
 >
 >     subgraph SYS["系统技能"]
 >         Proxy
->         可执行文件
+>         file[文件]
 >     end
+>
+>     click file "../skills/file.html"
 >
 >     subgraph SOS["软件技能"]
 >         下载器
@@ -103,7 +105,9 @@ dateCreated: "2024-07-03T16:27:00"
 >
 > 如果它是快捷方式，那么复制一份到桌面即可。如果它是 `.exe` 扩展名的可执行文件，那么右键「发送到」「桌面快捷方式」就好。
 >
-> 所需技能：「文件（可执行）」
+> 所需技能：「[文件][file]」
+
+[file]: ../skills/file.md
 
 > [!note]- 5. 创建／登录 Steam 账户
 >
