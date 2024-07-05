@@ -13,38 +13,28 @@ icon: material/steam
 
 本生存指南，将会介绍使用 Steam 所需的技能树，方便玩家使用 Steam。
 
-> [!abstract]+ 技能树
+> [!abstract]+ 使用 Steam 所需的技能树
 >
 > ```mermaid
-> graph TD
->     subgraph Steam["使用 Steam 所需的技能树"]
->         direction LR
->         BS
->         SYS
->         SOS
->         OS
->     end
+> flowchart TD
 >
->     subgraph BS["基础技能"]
->         keyboard[键盘]
->         鼠标
->     end
+>     classDef advanced fill:#E8B647,color:#000000
+>     classDef intermediate fill:#91989F,color:#000000
+>     classDef primary fill:#5C3719,color:#FFFFFF
 >
->     subgraph SYS["系统技能"]
->         Proxy
->         file[文件]
->         install[安装]
->     end
+>     browser(浏览器)
+>     downloader(下载器)
+>     file(文件)
+>     install(安装)
+>     keyboard(键盘)
+>     search(搜索)
+>     shopping(网上购物)
+>     user_account(帐号)
 >
->     subgraph SOS["软件技能"]
->         downloader[下载器]
->         browser[浏览器（初级）] --> search[搜索（初级）]
->         user_account[帐号] --> shopping[网上购物]
->     end
->
->     subgraph OS["其它技能"]
->         设置
->     end
+>     keyboard --> file --> downloader
+>     keyboard --> user_account --> shopping
+>     keyboard --> browser --> search
+>     file --> install
 >
 >     click keyboard "../skills/keyboard.html"
 >     click file "../skills/file.html"
@@ -55,6 +45,19 @@ icon: material/steam
 >     click user_account "../skills/user_account.html"
 >     click shopping "../skills/shopping.md"
 > ```
+
+<!--
+<span class="skill_list_icon" markdown="1">
+:material-web:{ .browser }
+:material-download:{ .downloader }
+:material-file:{ .file }
+:material-package-variant-plus:{ .install }
+:material-keyboard:{ .keyboard }
+:material-search-web:{ .search }
+:material-shopping:{ .shopping }
+:material-package-variant-plus:{ .user_account }
+</span>
+-->
 
 ## 操作细节
 

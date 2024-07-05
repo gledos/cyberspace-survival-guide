@@ -1,101 +1,51 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const localStorageKey = "cyberspace-survival-guide";
-    let localStorageData = JSON.parse(localStorage.getItem(localStorageKey)) || {
-        "cyberspace-survival-guide-version": "0.0.1",
-        skills: {},
-    };
+// 获取 localStorage 数据
+const localStorageKey = "cyberspace-survival-guide";
+let localStorageData = JSON.parse(localStorage.getItem(localStorageKey)) || { skills: {} };
 
-    const skillLevels = {
-        browser: [
-            { key: "browser_advanced", label: "浏览器（高级）" },
-            { key: "browser_intermediate", label: "浏览器（中级）" },
-            { key: "browser_primary", label: "浏览器（初级）" },
-        ],
-        downloader: [
-            { key: "downloader_advanced", label: "下载器" },
-        ],
-        file: [
-            { key: "file_advanced", label: "文件（高级）" },
-            { key: "file_intermediate", label: "文件（中级）" },
-            { key: "file_primary", label: "文件（初级）" },
-        ],
-        install: [
-            { key: "install_advanced", label: "安装" },
-        ],
-        keyboard: [
-            { key: "keyboard_advanced", label: "键盘（高级）" },
-            { key: "keyboard_intermediate", label: "键盘（中级）" },
-            { key: "keyboard_primary", label: "键盘（初级）" },
-        ],
-        search: [
-            { key: "search_advanced", label: "搜索（高级）" },
-            { key: "search_intermediate", label: "搜索（中级）" },
-            { key: "search_primary", label: "搜索（初级）" },
-        ],
-        shopping: [
-            { key: "shopping_advanced", label: "网上购物（高级）" },
-            { key: "shopping_intermediate", label: "网上购物（中级）" },
-            { key: "shopping_primary", label: "网上购物（初级）" },
-        ],
-        user_account: [
-            { key: "user_account_advanced", label: "帐号（高级）" },
-            { key: "user_account_primary", label: "帐号（初级）" },
-        ],
-    };
+// 定义技能等级和对应的类
+const skillLevels = ["primary", "intermediate", "advanced"];
 
-    const grid = document.querySelector(".grid");
-    const cards = Array.from(grid.querySelectorAll("p"));
+// 查找页面中的 <pre> 和 <code> 元素
+const preElements = document.querySelectorAll('pre code');
 
-    cards.forEach((card) => {
-        const skillTypeMatch = card.className.match(/skill_(\w+)/);
-        if (!skillTypeMatch) return;
+// 处理每一个 <pre> 和 <code> 元素
+preElements.forEach(pre => {
+    let codeContent = pre.textContent;
 
-        const skillType = skillTypeMatch[1];
-        const skillLevelsData = skillLevels[skillType];
-        const userSkills = localStorageData.skills;
+    // 检查 <code> 内容是否以 "flowchart" 开头
+    if (codeContent.trim().startsWith('flowchart')) {
+        // 创建一个新的行，用于添加类标记
+        let newLines = [];
 
-        let highestSkill = null;
+        // 用于跟踪每个技能的最高等级
+        let skillMaxLevels = {};
 
-        for (const skillLevel of skillLevelsData) {
-            if (userSkills[skillLevel.key]) {
-                highestSkill = skillLevel;
-                break;
+        // 遍历 localStorage 数据中的技能
+        Object.keys(localStorageData.skills).forEach(skill => {
+            // 提取技能名称和等级
+            let [skillName, skillLevel] = skill.split('_');
+            let levelIndex = skillLevels.indexOf(skillLevel);
+
+            // 如果找到对应的技能
+            if (levelIndex !== -1) {
+                // 更新每个技能的最高等级
+                if (!skillMaxLevels[skillName] || levelIndex > skillLevels.indexOf(skillMaxLevels[skillName])) {
+                    skillMaxLevels[skillName] = skillLevel;
+                }
             }
+        });
+
+        // 生成新行，包含每个技能的最高等级
+        for (let skillName in skillMaxLevels) {
+            let classMark = `${skillName}:::${skillMaxLevels[skillName]}`;
+            newLines.push(classMark);
         }
 
-        if (highestSkill) {
-            card.classList.add("card", `skill_${skillType}`, highestSkill.key);
-            card.querySelector("a").innerText = highestSkill.label;
-        } else {
-            const blockquote = document.createElement("blockquote");
-            blockquote.appendChild(card.cloneNode(true));
-            card.parentNode.replaceChild(blockquote, card);
+        // 将类标记行插入到 flowchart 内容的下一行
+        if (newLines.length > 0) {
+            let flowchartEndIndex = codeContent.indexOf('\n') + 1;
+            codeContent = codeContent.slice(0, flowchartEndIndex) + newLines.join('\n') + '\n' + codeContent.slice(flowchartEndIndex);
+            pre.textContent = codeContent;
         }
-    });
-
-    // Reorder the cards based on the user's skills
-    const sortedCards = Array.from(grid.children).sort((a, b) => {
-        const aSkillType = a.className.match(/skill_(\w+)/);
-        const bSkillType = b.className.match(/skill_(\w+)/);
-
-        if (!aSkillType && !bSkillType) return 0;
-        if (aSkillType && !bSkillType) return -1;
-        if (!aSkillType && bSkillType) return 1;
-
-        const aUserSkill = skillLevels[aSkillType[1]].find((level) => localStorageData.skills[level.key]);
-        const bUserSkill = skillLevels[bSkillType[1]].find((level) => localStorageData.skills[level.key]);
-
-        if (aUserSkill && !bUserSkill) return -1;
-        if (!aUserSkill && bUserSkill) return 1;
-        if (aUserSkill && bUserSkill) {
-            return skillLevels[bSkillType[1]].indexOf(bUserSkill) - skillLevels[aSkillType[1]].indexOf(aUserSkill);
-        }
-
-        return 0;
-    });
-
-    // Append the reordered cards and blockquotes to the grid
-    sortedCards.forEach((card) => {
-        grid.appendChild(card);
-    });
+    }
 });
