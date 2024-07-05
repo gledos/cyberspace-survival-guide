@@ -6,6 +6,7 @@ date: "2024-07-03T23:55:28"
 特殊标签标记: #无标签
 editor: markdown
 dateCreated: "2024-07-03T16:27:00"
+icon: material/web
 ---
 
 ## 简介
@@ -27,8 +28,7 @@ dateCreated: "2024-07-03T16:27:00"
 
 ### 初级
 
-初级的浏览器技能等级，需要掌握地址栏的用法，以及对链接（URL）有基础的认识。对网站无法正常浏览，
-显示 HTTP 404、「连接被重置」等错误信息有基础认识。
+掌握地址栏的用法，以及对链接（URL）有基础的认识。对网站无法正常浏览，显示 HTTP 404、「连接被重置」等错误信息有基础认识。
 
 > [!tip]+ 外部资料
 >
@@ -40,13 +40,77 @@ dateCreated: "2024-07-03T16:27:00"
 
 ## 中级
 
-〔待续〕
-
-涉及小书签、插件／扩展等用法。
+了解小书签、插件／扩展等用法。
 
 ## 高级
 
-〔待续〕
-
-涉及用户脚本（user script）、用户样式（user style/css）、开发者工具等用法。以及对网页的 HTML、JavaScript 与 CSS，
+了解用户脚本（user script）、用户样式（user style/css）、开发者工具等用法。以及对网页的 HTML、JavaScript 与 CSS，
 有基础认识。
+
+### 测验
+
+> [!question]+ 浏览器测试
+>
+> <div class="button-container">
+>     <button class="md-button" onclick="changeQuiz('browser_primary')">浏览器（初级）测验</button>
+>     <button class="md-button" onclick="changeQuiz('browser_intermediate')">浏览器（中级）测验</button>
+>     <button class="md-button" onclick="changeQuiz('browser_advanced')">浏览器（高级）测验</button>
+> </div>
+>
+> <div class="container">
+>     <div class="question-container" data-quiz="browser_primary">
+>         <div class="question" id="question"></div>
+>         <ul class="task-list" id="answers"></ul>
+>         <button class="md-button" onclick="submitAnswer()">提交答案</button>
+>         <button class="md-button" onclick="retryQuiz()">全部重试</button>
+>     </div>
+> </div>
+
+<script>
+    // 题目数据，假设从 JSON 文件或其他数据源加载
+    const quizData = {
+        "browser_primary": {
+            "title": "浏览器（初级）技能测验",
+            "questions": [
+                {
+                    "question": "占位题目 1",
+                    "answers": [
+                        "答案选项 0",
+                        "答案选项 1",
+                        "答案选项 2（正确答案）"
+                    ],
+                    "correct_answer": 2
+                }
+            ]
+        },
+        "browser_intermediate": {
+            "title": "浏览器（中级）技能测验",
+            "questions": [
+                {
+                    "question": "占位题目 1",
+                    "answers": [
+                        "答案选项 0",
+                        "答案选项 1",
+                        "答案选项 2（正确答案）"
+                    ],
+                    "correct_answer": 2
+                }
+            ]
+        },
+        "browser_advanced": {
+            "title": "浏览器（高级）技能测验",
+            "questions": [
+                {
+                    "question": "占位题目 1",
+                    "answers": [
+                        "答案选项 0",
+                        "答案选项 1",
+                        "答案选项 2（正确答案）"
+                    ],
+                    "correct_answer": 2
+                }
+            ]
+        },
+    };
+</script>
+

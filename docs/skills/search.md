@@ -6,6 +6,7 @@ date: "2024-07-04T12:55:28"
 特殊标签标记: #无标签
 editor: markdown
 dateCreated: "2024-07-04T09:17:00"
+icon: material/search-web
 ---
 
 ## 简介
@@ -42,7 +43,7 @@ dateCreated: "2024-07-04T09:17:00"
 
 ### 测验
 
-> [!question]+ 搜索（初级）测试
+> [!question]+ 搜索测试
 >
 > <div class="button-container">
 >     <button class="md-button" onclick="changeQuiz('search_primary')">搜索（初级）测验</button>
@@ -100,9 +101,9 @@ dateCreated: "2024-07-04T09:17:00"
                 {
                     "question": "占位题目 1",
                     "answers": [
+                        "答案选项 0",
                         "答案选项 1",
-                        "答案选项 2",
-                        "答案选项 3（正确答案）"
+                        "答案选项 2（正确答案）"
                     ],
                     "correct_answer": 2
                 }
@@ -114,9 +115,9 @@ dateCreated: "2024-07-04T09:17:00"
                 {
                     "question": "占位题目 1",
                     "answers": [
+                        "答案选项 0",
                         "答案选项 1",
-                        "答案选项 2",
-                        "答案选项 3（正确答案）"
+                        "答案选项 2（正确答案）"
                     ],
                     "correct_answer": 2
                 }
