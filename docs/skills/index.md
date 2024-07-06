@@ -80,7 +80,7 @@ flowchart TD
 :material-shopping: [网上购物](./shopping.md)
 { .card .skill_shopping }
 
-:material-package-variant-plus: [帐号](./user_account.md)
+:material-account: [帐号](./user_account.md)
 { .card .skill_user_account }
 
 </div>
