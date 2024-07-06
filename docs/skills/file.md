@@ -41,6 +41,9 @@ icon: material/file
 
 系统为了节省资源，会使用扩展名来标识不同文件的格式，如果文件的扩展名不符合该文件的格式，那么软件可能无法正常读取。
 
+比如该网页名为 `file.html`，扩展名为 `.html`，如果修改为 `file.pdf`，那么运行时会调用 PDF 阅读器，
+很可能会被识别为文件损坏。
+
 所以系统默认隐藏了文件的扩展名，需要了解扩展名后，在系统里通过设置，让扩展名可见。
 
 ???+ info "启用扩展名的方法"
@@ -61,8 +64,6 @@ icon: material/file
 
 [^win_fne]: [Windows 中的常见文件扩展名 - Microsoft 支持](https://support.microsoft.com/zh-cn/windows/windows-中的常见文件扩展名-da4a4430-8e76-89c5-59f7-1cdbbc75cb01)
 [^mac_fne]: [在 Mac 上显示或隐藏文件扩展名 - 官方 Apple 支持 (中国)](https://support.apple.com/zh-cn/guide/mac-help/mchlp2304/mac)
-
-该网页名为 `file.html`，
 
 > [!note]+ 常见的文件扩展名
 >
