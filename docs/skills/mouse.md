@@ -106,10 +106,29 @@ icon: material/mouse
 
 #### 操作
 
-推荐前往 GCFGlobal 的 [Mouse Tutorial](https://edu.gcfglobal.org/en/mousetutorial/mouse-tutorial/1/)（鼠标教程），
-尝试里面的，涉及鼠标双击、拖动的交互式小游戏。
+下面是以 GCFGlobal 的 [Mouse Tutorial](https://edu.gcfglobal.org/en/mousetutorial/mouse-tutorial/1/)（鼠标教程）
+为灵感制作的交互式小游戏。目前仅有拖动文件的训练，其他的训练正在制作中。
 
-〔之后尝试用游戏引擎，复刻类似的交互式小游戏。〕
+<style>
+.game {
+    width: 400px;
+    height: 300px;
+    border: none;
+}
+.iframe_container {
+    position: relative;
+}
+</style>
+
+<div class="iframe_container" align=center>
+<iframe class="game" src="../src/game/1/index.html">
+</iframe>
+</div>
+
+> [!note]+ 来源
+>
+> 文字来自 [SolidZORO/zpix-pixel-font](https://github.com/SolidZORO/zpix-pixel-font)，其他像 Windows 98 风格的元素，
+> 均是复刻或临摹。
 
 #### 指针图标
 

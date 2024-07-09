@@ -1,0 +1,12 @@
+{
+  "name": "赛博空间生存指南",
+  "short_name": "赛博空间生存指南",
+  "id": "com.example.gamename",
+  "description": "",
+  "orientation": "any",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "black",
+  "categories": ["games", "entertainment"],
+  "icons": []
+}
