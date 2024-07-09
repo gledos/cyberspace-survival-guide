@@ -1,0 +1,29 @@
+p[class$="advanced"] {
+    color: #000000;
+    background-color: #E8B647
+    /* https://nipponcolors.com/#tamamorokoshi */
+}
+
+p[class$="advanced"] > a {
+    color: black;
+}
+
+p[class$="intermediate"] {
+    color: black;
+    background-color: #91989F
+    /* https://nipponcolors.com/#ginnezumi */
+}
+
+p[class$="intermediate"] > a {
+    color: black;
+}
+
+p[class$="primary"] {
+    color: white;
+    background-color: #5C3719
+    /* https://colorsea.js.org/pages/Names.html#chinese-traditional-colors */
+}
+
+p[class$="primary"] > a {
+    color: white;
+}
